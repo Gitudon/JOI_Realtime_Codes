@@ -35,8 +35,8 @@ def login_to_atcoder():
     # USER = os.getenv("USER")
     # PASS = os.getenv("PASS")
     # オンラインの場合
-    USER = st.secrets["file"]["USER"]
-    PASS = st.secrets["file"]["PASS"]
+    USER = st.secrets["USER"]
+    PASS = st.secrets["PASS"]
     session = requests.session()
     csrf_token = get_a_token(session)
     login_info = {

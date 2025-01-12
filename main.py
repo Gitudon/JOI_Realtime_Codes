@@ -8,7 +8,7 @@ display_url=""
 students=[]
 select="手動入力"
 
-color_dict={"AC":"green","WA":"red","TLE":"orange","MLE":"orange","RE":"orange","CE":"orange","OLE":"orange","IE":"orange"}
+color_dict={"AC":"green","WA":"orange","TLE":"orange","MLE":"orange","RE":"orange","CE":"orange","OLE":"orange","IE":"orange"}
 
 def message():
     st.title("コードのリアルタイム表示")
