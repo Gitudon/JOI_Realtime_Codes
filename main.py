@@ -182,7 +182,7 @@ def main():
     input_students()
     input_contents()
     if display_url!="":
-        st.write(f'<center><span style="font-size:20px;">{display_url}</span></center>',unsafe_allow_html=True)
+        st.write(f'<center><span style="font-size:20px;"><a href="{display_url}">{display_url}</a></span></center>',unsafe_allow_html=True)
     if st.button("進捗を確認する"):
         while True:
             try:
