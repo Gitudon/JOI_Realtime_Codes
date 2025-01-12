@@ -174,7 +174,7 @@ def display_codes():
                             if language in ac.lang_to_lang:
                                 st.code(submission_code,language=ac.lang_to_lang[language])
                             else:
-                                st.code(submission_code)
+                                st.code(submission_code,language=None)
                         else:
                             st.write(f'<center><span style="font-size:20px;">{student}: </span> <span style="font-size:20px;">提出がありません</span></center>',unsafe_allow_html=True)
                         break
