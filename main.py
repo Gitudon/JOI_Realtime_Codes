@@ -171,7 +171,10 @@ def display_codes():
                             submission_code,language,result=ac.get_submission(submission_urls[problem_name])
                             result_html=f'<center><span style="font-size:20px;">{student}: </span> <span style="color:{color_dict[result]};font-size:20px;"><b>{result}</b></span></center>'
                             st.write(result_html,unsafe_allow_html=True)
-                            st.code(submission_code,language=ac.lang_to_lang[language])
+                            if language in ac.lang_to_lang:
+                                st.code(submission_code,language=ac.lang_to_lang[language])
+                            else:
+                                st.code(submission_code)
                         else:
                             st.write(f'<center><span style="font-size:20px;">{student}: </span> <span style="font-size:20px;">提出がありません</span></center>',unsafe_allow_html=True)
                         break
