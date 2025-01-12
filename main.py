@@ -22,7 +22,8 @@ def input_contents():
         if len(url.split("/"))==7:
             question=ac.url_to_problem_name(url)
         else:
-            st.write("ERROR: URLが正しくありません")
+            if url!="":
+                st.write("ERROR: URLが正しくありません")
             question=""
         display_url=""
     else:
@@ -140,11 +141,11 @@ def input_students():
         students.append(student4)
 
 def display_codes():
-    temp_message="(この表示は間違いの可能性があります)"
     global url, students
     for student in students:
         if student!="":
             session=ac.login_to_atcoder()
+            cnt=0
             while True:
                 if type(session)!=str:
                     #エラー防止のための初期値
@@ -160,7 +161,10 @@ def display_codes():
                     submission_urls=temp
                     st.write("")
                     if submission_urls=={}:
-                        st.write(f'<center><span style="font-size:20px;">{student}: </span> <span style="font-size:20px;">提出がありません{temp_message}</span></center>',unsafe_allow_html=True)
+                        cnt+=1
+                        if cnt>=3:
+                            st.write(f'<center><span style="font-size:20px;">{student}: </span> <span style="font-size:20px;">提出がありません</span></center>',unsafe_allow_html=True)
+                            break
                     else:
                         problem_name=url.split("/")[-1]
                         if problem_name in submission_urls:
@@ -169,8 +173,8 @@ def display_codes():
                             st.write(result_html,unsafe_allow_html=True)
                             st.code(submission_code,language=ac.lang_to_lang[language])
                         else:
-                            st.write(f'<center><span style="font-size:20px;">{student}: </span> <span style="font-size:20px;">提出がありません{temp_message}</span></center>',unsafe_allow_html=True)
-                    break
+                            st.write(f'<center><span style="font-size:20px;">{student}: </span> <span style="font-size:20px;">提出がありません</span></center>',unsafe_allow_html=True)
+                        break
     return
 
 def main():
