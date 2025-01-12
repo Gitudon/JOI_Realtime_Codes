@@ -11,12 +11,12 @@ select="手動入力"
 color_dict={"AC":"green","WA":"orange","TLE":"orange","MLE":"orange","RE":"orange","CE":"orange","OLE":"orange","IE":"orange"}
 
 def message():
-    st.title("コードのリアルタイム表示")
+    st.title("<center>コードのリアルタイム表示</center>",unsafe_allow_html=True)
     st.write("AtCoderの問題の進捗をリアルタイムで確認することができます。")
 
 def input_contents():
     global question, url, display_url, select
-    select=st.selectbox(label="選択してください",options=("手動入力","A-四則演算", "A-条件分岐","B-文字列", "B-forループ", "C-リスト", "C-1次予選過去問","S1-whileループ","S1-多重ループ","S1-多次元リスト","S2-組み込み関数","S2-組み込み関数(上級)","S2-ソート関数","S2-ソート関数(上級)","S3-関数の定義","S3-再帰関数","S3-再帰関数(上級)"))
+    select=st.selectbox(label="カテゴリを選択してください",options=("手動入力","A-四則演算", "A-条件分岐","B-文字列", "B-forループ", "C-リスト", "C-1次予選過去問","S1-whileループ","S1-多重ループ","S1-多次元リスト","S2-組み込み関数","S2-組み込み関数(上級)","S2-ソート関数","S2-ソート関数(上級)","S3-関数の定義","S3-再帰関数","S3-再帰関数(上級)"))
     if select=="手動入力":
         url=st.text_input("問題ページのURLを入力してください")
         if len(url.split("/"))==7:
@@ -182,7 +182,7 @@ def main():
     input_students()
     input_contents()
     if display_url!="":
-        st.write("URL：",display_url)
+        st.write(f'<center><span style="font-size:20px;">{display_url}</span></center>',unsafe_allow_html=True)
     if st.button("進捗を確認する"):
         while True:
             try:
