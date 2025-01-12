@@ -11,7 +11,7 @@ select="手動入力"
 color_dict={"AC":"green","WA":"orange","TLE":"orange","MLE":"orange","RE":"orange","CE":"orange","OLE":"orange","IE":"orange"}
 
 def message():
-    st.title("<center>コードのリアルタイム表示</center>",unsafe_allow_html=True)
+    st.write(f'<center><span style="font-size:30px;"><b>コードのリアルタイム表示</b></span></center>"',unsafe_allow_html=True)
     st.write("AtCoderの問題の進捗をリアルタイムで確認することができます。")
 
 def input_contents():
