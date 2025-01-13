@@ -1,6 +1,7 @@
 import streamlit as st
 import atcoder as ac
 import problems as pb
+import time
 
 question=""
 url=""
@@ -186,14 +187,14 @@ def main():
     input_contents()
     if display_url!="":
         st.write(f'<center><span style="font-size:20px;"><a href="{display_url}">{display_url}</a></span></center>',unsafe_allow_html=True)
-    if st.button("進捗を確認する"):
-        while True:
-            try:
-                display_codes()
-            except:
-                st.write("ERROR: 再試行してください。")
-            else:
-                break
+    while True:
+        try:
+            display_codes()
+        except:
+            st.write("ERROR: 再試行してください。")
+        else:
+            break
+    time.sleep(1)
 
 if __name__=="__main__":
     main()
