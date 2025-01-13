@@ -187,12 +187,16 @@ def main():
     if display_url!="":
         st.write(f'<center><span style="font-size:20px;"><a href="{display_url}">{display_url}</a></span></center>',unsafe_allow_html=True)
     while True:
-        try:
-            display_codes()
-        except:
-            st.write("ERROR: 再試行してください。")
-        else:
-            break
+        while True:
+            try:
+                display_codes()
+            except:
+                st.write("ERROR: 再試行してください。")
+            else:
+                break
+        if st.button("再入力"):
+            input_students()
+            input_contents()
 
 if __name__=="__main__":
     main()
