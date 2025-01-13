@@ -195,7 +195,18 @@ def main():
     input_contents()
     if display_url!="":
         st.write(f'<center><span style="font-size:20px;"><a href="{display_url}">{display_url}</a></span></center>',unsafe_allow_html=True)
-    if st.button("更新"):
+    col1, col2, col3 , col4, col5 = st.beta_columns(5)
+    with col1:
+        pass
+    with col2:
+        pass
+    with col4:
+        pass
+    with col5:
+        pass
+    with col3 :
+        center_button = st.button('更新')
+    if center_button:
         load()
 
 if __name__=="__main__":
