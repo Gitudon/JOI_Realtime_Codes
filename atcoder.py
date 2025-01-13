@@ -31,7 +31,7 @@ def get_a_token(session):
 
 def login_to_atcoder():
     # ローカルの場合
-    # load_dotenv()
+    # dotenv.load_dotenv()
     # USER = os.getenv("USER")
     # PASS = os.getenv("PASS")
     # オンラインの場合
