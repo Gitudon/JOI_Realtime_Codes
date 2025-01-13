@@ -1,7 +1,6 @@
 import streamlit as st
 import atcoder as ac
 import problems as pb
-import time
 
 question=""
 url=""
@@ -194,7 +193,6 @@ def main():
             st.write("ERROR: 再試行してください。")
         else:
             break
-    time.sleep(1)
 
 if __name__=="__main__":
     main()
