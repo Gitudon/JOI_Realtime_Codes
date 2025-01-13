@@ -195,7 +195,7 @@ def main():
     input_contents()
     if display_url!="":
         st.write(f'<center><span style="font-size:20px;"><a href="{display_url}">{display_url}</a></span></center>',unsafe_allow_html=True)
-    if st.button("コードを表示"):
+    if st.button("更新"):
         load()
 
 if __name__=="__main__":
