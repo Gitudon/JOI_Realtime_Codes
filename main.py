@@ -168,8 +168,8 @@ def display_codes():
                     else:
                         problem_name=url.split("/")[-1]
                         if problem_name in submission_urls:
-                            submission_code,language,result=ac.get_submission(submission_urls[problem_name])
-                            result_html=f'<center><span style="font-size:20px;">{student}: </span> <span style="color:{color_dict[result]};font-size:20px;"><b>{result}</b></span></center>'
+                            submission_code,language,result,answer_time=ac.get_submission(submission_urls[problem_name])
+                            result_html=f'<center><span style="font-size:20px;">{student}: </span> <span style="color:{color_dict[result]};font-size:20px;"><b>{result}</b> ({answer_time})</span></center>'
                             st.write(result_html,unsafe_allow_html=True)
                             if language in ac.lang_to_lang:
                                 st.code(submission_code,language=ac.lang_to_lang[language])
