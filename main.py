@@ -170,7 +170,7 @@ def display_codes():
                         if problem_name in submission_urls:
                             submission_code,language,result,answer_time=ac.get_submission(submission_urls[problem_name])
                             answer_time=answer_time[:-5]
-                            result_html=f'<center><span style="font-size:20px;">{student}: </span> <span style="color:{color_dict[result]};font-size:20px;"><b>{result}</b> ({answer_time})</span></center>'
+                            result_html=f'<center><span style="font-size:20px;">{student}: </span> <span style="color:{color_dict[result]};font-size:20px;"><b>{result}</b></span><span> ({answer_time})</span></center>'
                             st.write(result_html,unsafe_allow_html=True)
                             if language in ac.lang_to_lang:
                                 st.code(submission_code,language=ac.lang_to_lang[language])
