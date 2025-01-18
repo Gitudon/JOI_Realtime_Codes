@@ -85,5 +85,5 @@ def get_submission(submission_url):
     submission = soup.find('pre', id='submission-code').text
     language = soup.find('pre', id='submission-code')['data-ace-mode']
     result = soup.find('td', id='judge-status').text
-    answer_time = soup.find('time', class_='fixtime fixtime-second')
+    answer_time = soup.find('time', class_='fixtime fixtime-second').text
     return submission, language, result, answer_time
