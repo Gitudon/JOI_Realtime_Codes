@@ -1,6 +1,7 @@
 import streamlit as st
 import atcoder as ac
 import problems as pb
+import time
 
 question=""
 url=""
@@ -187,6 +188,7 @@ def load():
             display_codes()
         except:
             st.write("ERROR: 再試行してください。")
+            time.sleep(1)
         else:
             break
 
