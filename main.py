@@ -140,6 +140,9 @@ def input_students():
     student4=st.text_input("AtCoder IDを入力してください(4人目)")
     if student4!="":
         students.append(student4)
+    student5=st.text_input("AtCoder IDを入力してください(5人目)")
+    if student5!="":
+        students.append(student5)
 
 def display_codes():
     global url, students
